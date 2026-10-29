@@ -3,92 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\api\\controllers\\blogpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\controllers\\blogpostcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\dtos\\logodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\logodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\dtos\\blogpostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\blogpostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\interfaces\\ilogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\ilogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\domain\\entities\\blogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\blogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\infrastructure\\repositories\\blogpostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\blogpostrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\api\\controllers\\topcategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\controllers\\topcategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\services\\blogpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\services\\blogpostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Migrations\\20261027121747_BlogPostTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Infrastructure\\Migrations\\20261027121747_BlogPostTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\api\\controllers\\logocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\controllers\\logocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\infrastructure\\repositories\\topcategoriesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\topcategoriesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\services\\logoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\services\\logoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\infrastructure\\repositories\\logorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\logorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\interfaces\\iblogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\iblogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\services\\topcategoriesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\services\\topcategoriesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\interfaces\\itopcategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\itopcategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\dtos\\topcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\topcategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\api\\controllers\\trendingproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\controllers\\trendingproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\infrastructure\\repositories\\trendingproductsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\trendingproductsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\services\\trendingproductsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\services\\trendingproductsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\interfaces\\itrendingproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\interfaces\\itrendingproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\application\\dtos\\trendingproductsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}|Application\\Application.csproj|solutionrelative:application\\dtos\\trendingproductsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\domain\\entities\\trendingproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\trendingproducts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\domain\\entities\\topcategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\topcategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\infrastructure\\migrations\\20261024113337_trendingproductstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5872AEB3-BAA3-FE31-B0EB-0FB6DBEDCF83}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\migrations\\20261024113337_trendingproductstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|c:\\users\\welcome\\onedrive\\desktop\\ezyshopnow\\onionezyshopnow\\domain\\entities\\logo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E528BBC3-1C26-8C35-F682-23718816ADCD}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\logo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -98,286 +42,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BlogPostRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Repositories\\BlogPostRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\BlogPostRepository.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Repositories\\BlogPostRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\BlogPostRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T12:11:52.202Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TopCategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Controllers\\TopCategoryController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\TopCategoryController.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Controllers\\TopCategoryController.cs",
-              "RelativeToolTip": "Api\\Controllers\\TopCategoryController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwCYAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T06:09:39.43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "BlogPost.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Domain\\Entities\\BlogPost.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\BlogPost.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Domain\\Entities\\BlogPost.cs",
-              "RelativeToolTip": "Domain\\Entities\\BlogPost.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA0wBYAAAAIAAAAAAAAAA==",
+              "Title": "LogoController.cs",
+              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Controllers\\LogoController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\LogoController.cs",
+              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Controllers\\LogoController.cs",
+              "RelativeToolTip": "Api\\Controllers\\LogoController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAuwCwAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T12:05:13.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BlogPostController.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Controllers\\BlogPostController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\BlogPostController.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Controllers\\BlogPostController.cs",
-              "RelativeToolTip": "Api\\Controllers\\BlogPostController.cs",
-              "ViewState": "AgIAABwAAADg//////8twCYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T12:14:53.072Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BlogPostDto.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\DTOs\\BlogPostDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\BlogPostDto.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\DTOs\\BlogPostDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\BlogPostDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T12:06:31.493Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-29T07:16:58.326Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "BlogPostService.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Services\\BlogPostService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\BlogPostService.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Services\\BlogPostService.cs",
-              "RelativeToolTip": "Application\\Services\\BlogPostService.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAkwGUAAAAAAAAAAAAAAA==",
+              "Title": "LogoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Repositories\\LogoRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\LogoRepository.cs",
+              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Repositories\\LogoRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\LogoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T12:08:26.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-29T07:15:29.8Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "20261027121747_BlogPostTable.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Migrations\\20261027121747_BlogPostTable.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20261027121747_BlogPostTable.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Migrations\\20261027121747_BlogPostTable.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20261027121747_BlogPostTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T12:17:48.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Program.cs",
-              "RelativeDocumentMoniker": "Api\\Program.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Program.cs",
-              "RelativeToolTip": "Api\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-23T14:28:48.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IBlogPost.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Interfaces\\IBlogPost.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IBlogPost.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Interfaces\\IBlogPost.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IBlogPost.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-27T12:07:13.441Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TopCategoriesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Repositories\\TopCategoriesRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\TopCategoriesRepository.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Repositories\\TopCategoriesRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\TopCategoriesRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T05:47:24.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TopCategoriesService.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Services\\TopCategoriesService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\TopCategoriesService.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Services\\TopCategoriesService.cs",
-              "RelativeToolTip": "Application\\Services\\TopCategoriesService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wA0AAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T05:47:04.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Data\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Infrastructure\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA4AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-23T14:26:23.217Z",
+              "WhenOpened": "2026-10-29T07:14:57.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LogoService.cs",
+              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Services\\LogoService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\LogoService.cs",
+              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Services\\LogoService.cs",
+              "RelativeToolTip": "Application\\Services\\LogoService.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAUwDoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T07:13:13.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ILogo.cs",
+              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Interfaces\\ILogo.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\ILogo.cs",
+              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Interfaces\\ILogo.cs",
+              "RelativeToolTip": "Application\\Interfaces\\ILogo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T07:12:24.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogoDto.cs",
+              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\DTOs\\LogoDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\LogoDto.cs",
+              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\DTOs\\LogoDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\LogoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-29T07:11:19.604Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ITopCategories.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Interfaces\\ITopCategories.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\ITopCategories.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Interfaces\\ITopCategories.cs",
-              "RelativeToolTip": "Application\\Interfaces\\ITopCategories.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA6AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Program.cs",
+              "RelativeDocumentMoniker": "Api\\Program.cs",
+              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Program.cs",
+              "RelativeToolTip": "Api\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAMzMzMzMLwC0AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T05:46:45.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-29T07:18:08.187Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TrendingProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Controllers\\TrendingProductsController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\TrendingProductsController.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Api\\Controllers\\TrendingProductsController.cs",
-              "RelativeToolTip": "Api\\Controllers\\TrendingProductsController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAA8wDAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Logo.cs",
+              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Domain\\Entities\\Logo.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Logo.cs",
+              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Domain\\Entities\\Logo.cs",
+              "RelativeToolTip": "Domain\\Entities\\Logo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T11:42:06.568Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "TrendingProductsRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Repositories\\TrendingProductsRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\TrendingProductsRepository.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Repositories\\TrendingProductsRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\TrendingProductsRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T11:39:58.637Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "TopCategoryDto.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\DTOs\\TopCategoryDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\TopCategoryDto.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\DTOs\\TopCategoryDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\TopCategoryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T05:46:26.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "TrendingProductsService.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Services\\TrendingProductsService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\TrendingProductsService.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Services\\TrendingProductsService.cs",
-              "RelativeToolTip": "Application\\Services\\TrendingProductsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T11:36:48.936Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ITrendingProducts.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Interfaces\\ITrendingProducts.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\ITrendingProducts.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\Interfaces\\ITrendingProducts.cs",
-              "RelativeToolTip": "Application\\Interfaces\\ITrendingProducts.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T11:35:25.65Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "TrendingProductsDto.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\DTOs\\TrendingProductsDto.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\TrendingProductsDto.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Application\\DTOs\\TrendingProductsDto.cs",
-              "RelativeToolTip": "Application\\DTOs\\TrendingProductsDto.cs",
-              "ViewState": "AgIAAAkAAABAZmZmZmYSwA0AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T11:31:10.38Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "20261024113337_TrendingProductsTable.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Migrations\\20261024113337_TrendingProductsTable.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Migrations\\20261024113337_TrendingProductsTable.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Infrastructure\\Migrations\\20261024113337_TrendingProductsTable.cs",
-              "RelativeToolTip": "Infrastructure\\Migrations\\20261024113337_TrendingProductsTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T11:33:38.022Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "TrendingProducts.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Domain\\Entities\\TrendingProducts.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\TrendingProducts.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Domain\\Entities\\TrendingProducts.cs",
-              "RelativeToolTip": "Domain\\Entities\\TrendingProducts.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T10:10:13.221Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "TopCategories.cs",
-              "DocumentMoniker": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Domain\\Entities\\TopCategories.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\TopCategories.cs",
-              "ToolTip": "C:\\Users\\WELCOME\\OneDrive\\Desktop\\EzyShopNow\\OnionEzyShopNow\\Domain\\Entities\\TopCategories.cs",
-              "RelativeToolTip": "Domain\\Entities\\TopCategories.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-24T05:27:19.688Z"
+              "WhenOpened": "2026-10-29T07:10:12.92Z"
             }
           ]
         }

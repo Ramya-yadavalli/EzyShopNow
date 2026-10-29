@@ -23,6 +23,26 @@ interface BlogPost {
 
 type PopupMode = "add" | "edit" | "delete" | null;
 
+// Read the stored role, matching the HeroBanner authorization logic.
+function getStoredUserRole(): string {
+  const role =
+    localStorage.getItem("role") ||
+    localStorage.getItem("userRole");
+
+  if (!role || !role.trim()) return "";
+
+  return role.trim().toLowerCase();
+}
+
+// Only admin and client users with a token can manage blog posts.
+function canManageBlogPosts(): boolean {
+  const token = localStorage.getItem("token");
+  const role = getStoredUserRole();
+
+  return Boolean(token?.trim()) &&
+    ["admin", "client"].includes(role);
+}
+
 // Automatically discover images in src/assets/blogpost.
 const blogImages = import.meta.glob<string>(
   "../assets/blogpost/*",
@@ -39,7 +59,6 @@ function getImageUrl(imagePath: string): string {
 
   const path = imagePath.trim().replace(/\\/g, "/");
 
-  // Allow external image URLs.
   if (/^https?:\/\//i.test(path) || path.startsWith("data:")) {
     return path;
   }
@@ -70,6 +89,34 @@ function BlogPosts() {
   const [description, setDescription] = useState("");
   const [slug, setSlug] = useState("");
   const [imagePath, setImagePath] = useState("");
+
+  const [canManage, setCanManage] = useState(
+    () => canManageBlogPosts()
+  );
+
+  // Refresh permissions after login/logout.
+  useEffect(() => {
+    function checkAuthorization() {
+      const allowed = canManageBlogPosts();
+
+      setCanManage(allowed);
+
+      if (!allowed) {
+        setPopup(null);
+        setSelectedPost(null);
+      }
+    }
+
+    checkAuthorization();
+
+    window.addEventListener("authChanged", checkAuthorization);
+    window.addEventListener("storage", checkAuthorization);
+
+    return () => {
+      window.removeEventListener("authChanged", checkAuthorization);
+      window.removeEventListener("storage", checkAuthorization);
+    };
+  }, []);
 
   // GET: Load blog posts.
   async function loadPosts() {
@@ -151,11 +198,23 @@ function BlogPosts() {
   }
 
   function openAdd() {
+    if (!canManageBlogPosts()) {
+      setCanManage(false);
+      return;
+    }
+
+    setCanManage(true);
     resetForm();
     setPopup("add");
   }
 
   function openEdit(post: BlogPost) {
+    if (!canManageBlogPosts()) {
+      setCanManage(false);
+      return;
+    }
+
+    setCanManage(true);
     setSelectedPost(post);
     setTitle(post.title);
     setDate(post.date ? post.date.slice(0, 10) : "");
@@ -168,21 +227,35 @@ function BlogPosts() {
   }
 
   function openDelete(post: BlogPost) {
+    if (!canManageBlogPosts()) {
+      setCanManage(false);
+      return;
+    }
+
+    setCanManage(true);
     setSelectedPost(post);
     setError("");
     setPopup("delete");
   }
 
   function closePopup() {
+    if (saving) return;
+
     setPopup(null);
     resetForm();
   }
 
   // POST: Add a blog post.
   // PUT: Update a blog post.
-  // The image is a path, not an uploaded file.
   async function handleSave(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (!canManageBlogPosts()) {
+      setCanManage(false);
+      setPopup(null);
+      setError("You do not have permission to manage blog posts.");
+      return;
+    }
 
     if (popup !== "add" && popup !== "edit") return;
 
@@ -209,6 +282,13 @@ function BlogPosts() {
       return;
     }
 
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      setError("Please log in to manage blog posts.");
+      return;
+    }
+
     const isEdit = popup === "edit";
 
     const payload = {
@@ -232,6 +312,7 @@ function BlogPosts() {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(payload),
         }
@@ -246,7 +327,8 @@ function BlogPosts() {
         );
       }
 
-      closePopup();
+      setPopup(null);
+      resetForm();
       await loadPosts();
     } catch (err) {
       setError(
@@ -261,7 +343,21 @@ function BlogPosts() {
 
   // DELETE: Remove a blog post.
   async function handleDelete() {
+    if (!canManageBlogPosts()) {
+      setCanManage(false);
+      setPopup(null);
+      setError("You do not have permission to delete blog posts.");
+      return;
+    }
+
     if (!selectedPost) return;
+
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      setError("Please log in to manage blog posts.");
+      return;
+    }
 
     try {
       setSaving(true);
@@ -269,7 +365,12 @@ function BlogPosts() {
 
       const response = await fetch(
         `${API_URL}/${selectedPost.id}`,
-        { method: "DELETE" }
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
 
       if (!response.ok) {
@@ -281,7 +382,8 @@ function BlogPosts() {
         );
       }
 
-      closePopup();
+      setPopup(null);
+      resetForm();
       await loadPosts();
     } catch (err) {
       setError(
@@ -392,10 +494,6 @@ function BlogPosts() {
           object-fit: cover;
           object-position: center;
           transition: transform .4s ease;
-        }
-
-        .blog-image-link:hover .blog-image {
-          transform: scale(1.04);
         }
 
         .blog-image-placeholder {
@@ -765,15 +863,18 @@ function BlogPosts() {
         <div className="blog-heading blog-heading-row">
           <h2>Blog Posts</h2>
 
-          <button
-            type="button"
-            className="blog-add-button"
-            onClick={openAdd}
-            aria-label="Add blog post"
-            title="Add blog post"
-          >
-            <Plus size={22} />
-          </button>
+          {/* Add button is visible only to admin and client. */}
+          {canManage && (
+            <button
+              type="button"
+              className="blog-add-button"
+              onClick={openAdd}
+              aria-label="Add blog post"
+              title="Add blog post"
+            >
+              <Plus size={22} />
+            </button>
+          )}
         </div>
 
         {loading && (
@@ -817,26 +918,29 @@ function BlogPosts() {
                     </div>
                   </Link>
 
-                  <div className="blog-card-actions">
-                    <button
-                      type="button"
-                      onClick={() => openEdit(post)}
-                      title="Edit blog post"
-                      aria-label={`Edit ${post.title}`}
-                    >
-                      <Pencil size={16} />
-                    </button>
+                  {/* Edit/Delete buttons are visible only to admin and client. */}
+                  {canManage && (
+                    <div className="blog-card-actions">
+                      <button
+                        type="button"
+                        onClick={() => openEdit(post)}
+                        title="Edit blog post"
+                        aria-label={`Edit ${post.title}`}
+                      >
+                        <Pencil size={16} />
+                      </button>
 
-                    <button
-                      type="button"
-                      className="delete-action"
-                      onClick={() => openDelete(post)}
-                      title="Delete blog post"
-                      aria-label={`Delete ${post.title}`}
-                    >
-                      <Trash2 size={16} />
-                    </button>
-                  </div>
+                      <button
+                        type="button"
+                        className="delete-action"
+                        onClick={() => openDelete(post)}
+                        title="Delete blog post"
+                        aria-label={`Delete ${post.title}`}
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 <div className="blog-card-content">
@@ -852,6 +956,7 @@ function BlogPosts() {
                     </span>
 
                     <span>/</span>
+
                     <span className="blog-category">
                       {post.category}
                     </span>
@@ -879,11 +984,15 @@ function BlogPosts() {
           })}
         </div>
 
-        {popup && (
+        {/* Management popups are available only to admin and client. */}
+        {canManage && popup && (
           <div
             className="blog-modal-overlay"
             onClick={(event) => {
-              if (event.target === event.currentTarget && !saving) {
+              if (
+                event.target === event.currentTarget &&
+                !saving
+              ) {
                 closePopup();
               }
             }}
@@ -940,7 +1049,7 @@ function BlogPosts() {
                     <button
                       type="button"
                       className="blog-delete-button"
-                      onClick={handleDelete}
+                      onClick={() => void handleDelete()}
                       disabled={saving}
                     >
                       {saving ? "Deleting..." : "Delete"}
@@ -949,7 +1058,7 @@ function BlogPosts() {
                 </div>
               ) : (
                 <form
-                  onSubmit={handleSave}
+                  onSubmit={(event) => void handleSave(event)}
                   className="blog-modal-form"
                 >
                   <label>

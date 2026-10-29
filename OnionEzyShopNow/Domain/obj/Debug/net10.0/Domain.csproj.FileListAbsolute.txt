@@ -10,3 +10,4 @@ C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Domain\obj\Debug\ne
 C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Domain\obj\Debug\net10.0\Domain.pdb
 C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Domain\obj\Debug\net10.0\ref\Domain.dll
 C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Domain\obj\Debug\net10.0\Domain.csproj.Up2Date
+C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Domain\obj\Debug\net10.0\Domain.sourcelink.json

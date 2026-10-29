@@ -7,7 +7,7 @@ import HomeDecoreBanner from "./HomeDecoreBanner";
 import BlogPosts from "./BlogPosts";
 import Offers from "./Offers";
 import Quote from "./Quote";
-import Footer from "./Footer";
+
 function Home() {
   return (
     <>
@@ -28,7 +28,7 @@ function Home() {
 
         <BlogPosts />
 
-        <Footer />
+        
       </main>
     </>
   );

@@ -173,3 +173,6 @@ C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Api\obj\Debug\net10
 C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Api\obj\Debug\net10.0\Api.pdb
 C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Api\obj\Debug\net10.0\Api.genruntimeconfig.cache
 C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Api\obj\Debug\net10.0\ref\Api.dll
+C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Api\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Api\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Api\obj\Debug\net10.0\Api.sourcelink.json

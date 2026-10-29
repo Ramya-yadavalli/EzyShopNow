@@ -18,7 +18,6 @@ interface TopCategory {
 
 type PopupMode = "add" | "edit" | "delete" | null;
 
-// Automatically discover images in src/assets/topcategories.
 const categoryImages = import.meta.glob<string>(
   "../assets/topcategories/*",
   {
@@ -27,6 +26,26 @@ const categoryImages = import.meta.glob<string>(
     import: "default",
   }
 );
+
+// Match the role-checking logic used in HeroBanner, BlogPosts and HomeDecore.
+function getStoredUserRole(): string {
+  const role =
+    localStorage.getItem("role") ||
+    localStorage.getItem("userRole");
+
+  if (!role || !role.trim()) return "";
+
+  return role.trim().toLowerCase();
+}
+
+// Only admin and client users with a token can manage categories.
+function canManageCategories(): boolean {
+  const token = localStorage.getItem("token");
+  const role = getStoredUserRole();
+
+  return Boolean(token?.trim()) &&
+    ["admin", "client"].includes(role);
+}
 
 function getImageUrl(imagePath: string): string {
   if (!imagePath) return "";
@@ -59,7 +78,36 @@ export default function TopCategories() {
   const [categoryName, setCategoryName] = useState("");
   const [imagePath, setImagePath] = useState("");
 
-  // Fetch categories
+  const [canManage, setCanManage] = useState(
+    () => canManageCategories()
+  );
+
+  // Update role permissions after login or logout.
+  useEffect(() => {
+    function checkPermissions() {
+      const allowed = canManageCategories();
+
+      setCanManage(allowed);
+
+      if (!allowed) {
+        setPopupMode(null);
+        setSelectedCategory(null);
+        setError("");
+      }
+    }
+
+    checkPermissions();
+
+    window.addEventListener("authChanged", checkPermissions);
+    window.addEventListener("storage", checkPermissions);
+
+    return () => {
+      window.removeEventListener("authChanged", checkPermissions);
+      window.removeEventListener("storage", checkPermissions);
+    };
+  }, []);
+
+  // Fetch categories.
   async function fetchCategories() {
     try {
       setLoading(true);
@@ -90,8 +138,10 @@ export default function TopCategories() {
     void fetchCategories();
   }, []);
 
-  // Open add popup
+  // Open Add popup.
   function openAddPopup() {
+    if (!canManageCategories()) return;
+
     setSelectedCategory(null);
     setCategoryName("");
     setImagePath("");
@@ -99,8 +149,10 @@ export default function TopCategories() {
     setPopupMode("add");
   }
 
-  // Open edit popup
+  // Open Edit popup.
   function openEditPopup(category: TopCategory) {
+    if (!canManageCategories()) return;
+
     setSelectedCategory(category);
     setCategoryName(category.categoryName);
     setImagePath(category.imagePath);
@@ -108,8 +160,10 @@ export default function TopCategories() {
     setPopupMode("edit");
   }
 
-  // Open delete confirmation
+  // Open Delete confirmation.
   function openDeletePopup(category: TopCategory) {
+    if (!canManageCategories()) return;
+
     setSelectedCategory(category);
     setError("");
     setPopupMode("delete");
@@ -121,9 +175,26 @@ export default function TopCategories() {
     setError("");
   }
 
-  // Add or update category. Update ID is sent in the body, not URL.
-  async function handleSave(e: React.FormEvent<HTMLFormElement>) {
+  // Add or update category.
+  async function handleSave(
+    e: React.FormEvent<HTMLFormElement>
+  ) {
     e.preventDefault();
+
+    if (!canManageCategories()) {
+      setCanManage(false);
+      setError("Only admin or client users can manage categories.");
+      closePopup();
+      return;
+    }
+
+    const token = localStorage.getItem("token");
+
+    if (!token?.trim()) {
+      setError("Please log in to manage categories.");
+      closePopup();
+      return;
+    }
 
     if (!categoryName.trim() || !imagePath.trim()) {
       setError("Please enter the category name and image path.");
@@ -158,15 +229,12 @@ export default function TopCategories() {
 
       const method = isEdit ? "PUT" : "POST";
 
-      console.log("API URL:", API_URL);
-      console.log("Request method:", method);
-      console.log("Request payload:", payload);
-
       const response = await fetch(API_URL, {
         method,
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(payload),
       });
@@ -194,8 +262,23 @@ export default function TopCategories() {
     }
   }
 
-  // Delete category
+  // Delete category.
   async function handleDelete() {
+    if (!canManageCategories()) {
+      setCanManage(false);
+      setError("Only admin or client users can manage categories.");
+      closePopup();
+      return;
+    }
+
+    const token = localStorage.getItem("token");
+
+    if (!token?.trim()) {
+      setError("Please log in to manage categories.");
+      closePopup();
+      return;
+    }
+
     if (!selectedCategory) return;
 
     try {
@@ -206,6 +289,9 @@ export default function TopCategories() {
         `${API_URL}/${selectedCategory.id}`,
         {
           method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
@@ -357,7 +443,6 @@ export default function TopCategories() {
           border-radius: 100px;
           background: white;
           color: #293b2d;
-          box-shadow: none;
           cursor: pointer;
         }
 
@@ -535,15 +620,18 @@ export default function TopCategories() {
       <div className="top-categories-header">
         <h2 className="top-categories-title">Top Categories</h2>
 
-        <button
-          type="button"
-          className="top-categories-add"
-          onClick={openAddPopup}
-          aria-label="Add category"
-          title="Add category"
-        >
-          <Plus size={28} strokeWidth={1.7} />
-        </button>
+        {/* Add button is visible only for admin or client */}
+        {canManage && (
+          <button
+            type="button"
+            className="top-categories-add"
+            onClick={openAddPopup}
+            aria-label="Add category"
+            title="Add category"
+          >
+            <Plus size={28} strokeWidth={1.7} />
+          </button>
+        )}
       </div>
 
       {loading && (
@@ -564,27 +652,30 @@ export default function TopCategories() {
 
           return (
             <div className="top-category-item" key={category.id}>
-              <div className="top-category-actions">
-                <button
-                  type="button"
-                  className="top-category-action"
-                  aria-label={`Edit ${category.categoryName}`}
-                  title="Edit"
-                  onClick={() => openEditPopup(category)}
-                >
-                  <Pencil size={17} strokeWidth={1.7} />
-                </button>
+              {/* Edit and Delete buttons are visible only for admin or client */}
+              {canManage && (
+                <div className="top-category-actions">
+                  <button
+                    type="button"
+                    className="top-category-action"
+                    aria-label={`Edit ${category.categoryName}`}
+                    title="Edit"
+                    onClick={() => openEditPopup(category)}
+                  >
+                    <Pencil size={17} strokeWidth={1.7} />
+                  </button>
 
-                <button
-                  type="button"
-                  className="top-category-action delete"
-                  aria-label={`Delete ${category.categoryName}`}
-                  title="Delete"
-                  onClick={() => openDeletePopup(category)}
-                >
-                  <Trash2 size={17} strokeWidth={1.7} />
-                </button>
-              </div>
+                  <button
+                    type="button"
+                    className="top-category-action delete"
+                    aria-label={`Delete ${category.categoryName}`}
+                    title="Delete"
+                    onClick={() => openDeletePopup(category)}
+                  >
+                    <Trash2 size={17} strokeWidth={1.7} />
+                  </button>
+                </div>
+              )}
 
               <div className="top-category-card">
                 <div className="top-category-image-wrap">
@@ -610,7 +701,8 @@ export default function TopCategories() {
         })}
       </div>
 
-      {popupMode && (
+      {/* Add, Edit and Delete popups */}
+      {popupMode && canManage && (
         <div
           className="top-category-overlay"
           onClick={(e) => {
@@ -649,7 +741,9 @@ export default function TopCategories() {
                   <strong>{selectedCategory?.categoryName}</strong>?
                 </p>
 
-                {error && <p className="top-category-error">{error}</p>}
+                {error && (
+                  <p className="top-category-error">{error}</p>
+                )}
 
                 <div className="top-category-modal-actions">
                   <button type="button" onClick={closePopup}>
@@ -701,7 +795,9 @@ export default function TopCategories() {
                   src/assets/topcategories folder.
                 </p>
 
-                {error && <p className="top-category-error">{error}</p>}
+                {error && (
+                  <p className="top-category-error">{error}</p>
+                )}
 
                 <div className="top-category-modal-actions">
                   <button type="button" onClick={closePopup}>
@@ -728,4 +824,3 @@ export default function TopCategories() {
     </section>
   );
 }
-

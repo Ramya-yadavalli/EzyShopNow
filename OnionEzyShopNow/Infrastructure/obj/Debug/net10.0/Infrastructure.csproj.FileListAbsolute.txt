@@ -17,3 +17,4 @@ C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Infrastructure\obj\
 C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Infrastructure\obj\Debug\net10.0\Infrastructure.pdb
 C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Infrastructure\obj\Debug\net10.0\Infrastructure.genruntimeconfig.cache
 C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Infrastructure\obj\Debug\net10.0\ref\Infrastructure.dll
+C:\Users\WELCOME\OneDrive\Desktop\EzyShopNow\OnionEzyShopNow\Infrastructure\obj\Debug\net10.0\Infrastructure.sourcelink.json

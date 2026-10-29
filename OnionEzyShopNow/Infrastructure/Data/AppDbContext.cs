@@ -12,5 +12,11 @@ namespace Infrastructure.Data
         public DbSet<TopCategories> TopCategories { get; set; }
         public DbSet<TrendingProducts> TrendingProducts { get; set; }
         public DbSet<BlogPost> BlogPosts { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<HomeDecore> HomeDecores { get; set; }
+        public DbSet<HeroBanner> HeroBanners { get; set; }
+        public DbSet<Logo> Logos { get; set; }
     }
 }

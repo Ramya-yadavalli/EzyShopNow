@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import {
   Plus,
   Pencil,
@@ -38,7 +39,7 @@ const emptyProduct: Omit<Product, "id"> = {
   badge: "",
 };
 
-// Assumes this component is inside src/components.
+// Automatically discover images in src/assets/trendingproducts.
 const categoryImages = import.meta.glob<string>(
   "../assets/trendingproducts/*",
   {
@@ -47,6 +48,27 @@ const categoryImages = import.meta.glob<string>(
     import: "default",
   }
 );
+
+// Match the role-checking logic used in HeroBanner, BlogPosts,
+// HomeDecore and TopCategories.
+function getStoredUserRole(): string {
+  const role =
+    localStorage.getItem("role") ||
+    localStorage.getItem("userRole");
+
+  if (!role || !role.trim()) return "";
+
+  return role.trim().toLowerCase();
+}
+
+// Only admin and client users with a token can manage products.
+function getAuthorizedRole(): boolean {
+  const token = localStorage.getItem("token");
+  const role = getStoredUserRole();
+
+  return Boolean(token?.trim()) &&
+    ["admin", "client"].includes(role);
+}
 
 function getImageUrl(imagePath: string): string {
   if (!imagePath) return "";
@@ -79,7 +101,37 @@ export default function TrendingProducts() {
   const [formData, setFormData] =
     useState<Omit<Product, "id">>({ ...emptyProduct });
 
-  // Fetch products
+  // Only admin and client roles can see the management icons.
+  const [canManageProducts, setCanManageProducts] = useState(
+    () => getAuthorizedRole()
+  );
+
+  // Refresh authorization after login/logout.
+  useEffect(() => {
+    function checkLogin() {
+      const allowed = getAuthorizedRole();
+
+      setCanManageProducts(allowed);
+
+      if (!allowed) {
+        setPopupMode(null);
+        setSelectedProduct(null);
+        setError("");
+      }
+    }
+
+    checkLogin();
+
+    window.addEventListener("authChanged", checkLogin);
+    window.addEventListener("storage", checkLogin);
+
+    return () => {
+      window.removeEventListener("authChanged", checkLogin);
+      window.removeEventListener("storage", checkLogin);
+    };
+  }, []);
+
+  // Fetch products.
   async function fetchProducts() {
     try {
       setLoading(true);
@@ -110,16 +162,26 @@ export default function TrendingProducts() {
     void fetchProducts();
   }, []);
 
-  // Open add popup
+  // Open add popup.
   function openAddPopup() {
+    if (!getAuthorizedRole()) {
+      setCanManageProducts(false);
+      return;
+    }
+
     setSelectedProduct(null);
     setFormData({ ...emptyProduct });
     setError("");
     setPopupMode("add");
   }
 
-  // Open edit popup
+  // Open edit popup.
   function openEditPopup(product: Product) {
+    if (!getAuthorizedRole()) {
+      setCanManageProducts(false);
+      return;
+    }
+
     setSelectedProduct(product);
 
     setFormData({
@@ -138,8 +200,13 @@ export default function TrendingProducts() {
     setPopupMode("edit");
   }
 
-  // Open delete confirmation
+  // Open delete confirmation.
   function openDeletePopup(product: Product) {
+    if (!getAuthorizedRole()) {
+      setCanManageProducts(false);
+      return;
+    }
+
     setSelectedProduct(product);
     setError("");
     setPopupMode("delete");
@@ -151,9 +218,9 @@ export default function TrendingProducts() {
     setError("");
   }
 
-  // Update form fields
+  // Update form fields.
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) {
     const { name, value } = e.target;
 
@@ -175,9 +242,24 @@ export default function TrendingProducts() {
     }));
   }
 
-  // Add or update product. Update ID is sent in the body, not URL.
-  async function handleSave(e: React.FormEvent<HTMLFormElement>) {
+  // Add or update product.
+  async function handleSave(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (!getAuthorizedRole()) {
+      setCanManageProducts(false);
+      setError("Only admin and client roles can manage products.");
+      closePopup();
+      return;
+    }
+
+    const token = localStorage.getItem("token");
+
+    if (!token?.trim()) {
+      setError("Please log in to manage products.");
+      closePopup();
+      return;
+    }
 
     if (
       !formData.name.trim() ||
@@ -221,15 +303,12 @@ export default function TrendingProducts() {
 
       const method = isEdit ? "PUT" : "POST";
 
-      console.log("API URL:", API_URL);
-      console.log("Method:", method);
-      console.log("Payload:", payload);
-
       const response = await fetch(API_URL, {
         method,
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(payload),
       });
@@ -246,7 +325,9 @@ export default function TrendingProducts() {
       await fetchProducts();
     } catch (err) {
       const message =
-        err instanceof Error ? err.message : "Unable to save product.";
+        err instanceof Error
+          ? err.message
+          : "Unable to save product.";
 
       setError(message);
       console.error("Save product error:", err);
@@ -255,8 +336,23 @@ export default function TrendingProducts() {
     }
   }
 
-  // Delete product
+  // Delete product.
   async function handleDelete() {
+    if (!getAuthorizedRole()) {
+      setCanManageProducts(false);
+      setError("Only admin and client roles can manage products.");
+      closePopup();
+      return;
+    }
+
+    const token = localStorage.getItem("token");
+
+    if (!token?.trim()) {
+      setError("Please log in to manage products.");
+      closePopup();
+      return;
+    }
+
     if (!selectedProduct) return;
 
     try {
@@ -265,7 +361,12 @@ export default function TrendingProducts() {
 
       const response = await fetch(
         `${API_URL}/${selectedProduct.id}`,
-        { method: "DELETE" }
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
 
       if (!response.ok) {
@@ -280,7 +381,9 @@ export default function TrendingProducts() {
       await fetchProducts();
     } catch (err) {
       setError(
-        err instanceof Error ? err.message : "Unable to delete product."
+        err instanceof Error
+          ? err.message
+          : "Unable to delete product."
       );
     } finally {
       setSaving(false);
@@ -368,7 +471,9 @@ export default function TrendingProducts() {
           transition: transform 0.3s ease;
         }
 
-       
+        .trending-card:hover .trending-image {
+          transform: scale(1.04);
+        }
 
         .trending-image-placeholder {
           display: flex;
@@ -674,19 +779,19 @@ export default function TrendingProducts() {
       `}</style>
 
       <div className="trending-header">
-        <div>
-          <h2>Trending Products</h2>
-        </div>
+        <h2>Trending Products</h2>
 
-        <button
-          type="button"
-          className="trending-add-btn"
-          onClick={openAddPopup}
-          aria-label="Add product"
-          title="Add product"
-        >
-          <Plus size={28} strokeWidth={1.7} />
-        </button>
+        {canManageProducts && (
+          <button
+            type="button"
+            className="trending-add-btn"
+            onClick={openAddPopup}
+            aria-label="Add product"
+            title="Add product"
+          >
+            <Plus size={28} strokeWidth={1.7} />
+          </button>
+        )}
       </div>
 
       {loading && (
@@ -698,7 +803,9 @@ export default function TrendingProducts() {
       )}
 
       {!loading && !error && products.length === 0 && (
-        <p className="trending-message">No trending products found.</p>
+        <p className="trending-message">
+          No trending products found.
+        </p>
       )}
 
       <div className="trending-grid">
@@ -714,27 +821,29 @@ export default function TrendingProducts() {
                   </span>
                 )}
 
-                <div className="trending-actions">
-                  <button
-                    type="button"
-                    className="trending-action-btn"
-                    aria-label={`Edit ${product.name}`}
-                    title="Edit"
-                    onClick={() => openEditPopup(product)}
-                  >
-                    <Pencil size={17} strokeWidth={1.8} />
-                  </button>
+                {canManageProducts && (
+                  <div className="trending-actions">
+                    <button
+                      type="button"
+                      className="trending-action-btn"
+                      aria-label={`Edit ${product.name}`}
+                      title="Edit"
+                      onClick={() => openEditPopup(product)}
+                    >
+                      <Pencil size={17} strokeWidth={1.8} />
+                    </button>
 
-                  <button
-                    type="button"
-                    className="trending-action-btn delete"
-                    aria-label={`Delete ${product.name}`}
-                    title="Delete"
-                    onClick={() => openDeletePopup(product)}
-                  >
-                    <Trash2 size={17} strokeWidth={1.8} />
-                  </button>
-                </div>
+                    <button
+                      type="button"
+                      className="trending-action-btn delete"
+                      aria-label={`Delete ${product.name}`}
+                      title="Delete"
+                      onClick={() => openDeletePopup(product)}
+                    >
+                      <Trash2 size={17} strokeWidth={1.8} />
+                    </button>
+                  </div>
+                )}
 
                 {imageUrl ? (
                   <img
@@ -791,7 +900,7 @@ export default function TrendingProducts() {
         })}
       </div>
 
-      {popupMode && (
+      {popupMode && canManageProducts && (
         <div
           className="trending-overlay"
           onClick={(e) => {
@@ -966,13 +1075,14 @@ export default function TrendingProducts() {
                   />
                 </label>
 
-                {formData.imagePath && getImageUrl(formData.imagePath) && (
-                  <img
-                    src={getImageUrl(formData.imagePath)}
-                    alt="Product preview"
-                    className="trending-preview"
-                  />
-                )}
+                {formData.imagePath &&
+                  getImageUrl(formData.imagePath) && (
+                    <img
+                      src={getImageUrl(formData.imagePath)}
+                      alt="Product preview"
+                      className="trending-preview"
+                    />
+                  )}
 
                 <p style={{ fontSize: 12, color: "#667064" }}>
                   The filename must exist in src/assets/trendingproducts.
