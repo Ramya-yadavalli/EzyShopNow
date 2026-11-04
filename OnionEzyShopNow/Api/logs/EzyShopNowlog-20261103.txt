@@ -1,0 +1,45 @@
+2026-11-03 19:12:01 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2026-11-03 19:12:05 [INF] Retrieving all hero banners.
+2026-11-03 19:12:05 [INF] Retrieving all top categories.
+2026-11-03 19:12:05 [WRN] Retrieving all blog posts.
+2026-11-03 19:12:05 [INF] Retrieving all home decors.
+2026-11-03 19:12:05 [INF] Retrieving all trending products.
+2026-11-03 19:12:05 [INF] Retrieving all logos.
+2026-11-03 19:12:08 [WRN] No store type was specified for the decimal property 'OriginalPrice' on entity type 'TrendingProducts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-11-03 19:12:08 [WRN] No store type was specified for the decimal property 'Price' on entity type 'TrendingProducts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-11-03 19:12:08 [WRN] No store type was specified for the decimal property 'Rating' on entity type 'TrendingProducts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-11-03 19:12:08 [WRN] No store type was specified for the decimal property 'Reviews' on entity type 'TrendingProducts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-11-03 19:12:11 [INF] HTTP GET /api/HomeDecore responded 200 in 7258.9690 ms
+2026-11-03 19:12:11 [INF] HTTP GET /api/TrendingProducts responded 200 in 7246.0193 ms
+2026-11-03 19:12:11 [INF] HTTP GET /api/HeroBanner responded 200 in 7260.2498 ms
+2026-11-03 19:12:11 [INF] HTTP GET /api/TopCategory responded 200 in 7261.7612 ms
+2026-11-03 19:12:11 [INF] HTTP GET /api/BlogPost responded 200 in 7273.7811 ms
+2026-11-03 19:12:11 [INF] HTTP GET /api/Logo responded 200 in 7280.5368 ms
+2026-11-03 19:12:11 [INF] Retrieving all hero banners.
+2026-11-03 19:12:11 [INF] Retrieving all home decors.
+2026-11-03 19:12:11 [INF] Retrieving all trending products.
+2026-11-03 19:12:12 [INF] Retrieving all top categories.
+2026-11-03 19:12:12 [WRN] Retrieving all blog posts.
+2026-11-03 19:12:12 [INF] Retrieving all logos.
+2026-11-03 19:12:12 [INF] HTTP GET /api/BlogPost responded 200 in 709.7364 ms
+2026-11-03 19:12:12 [INF] HTTP GET /api/TopCategory responded 200 in 726.9394 ms
+2026-11-03 19:12:12 [INF] HTTP GET /api/TrendingProducts responded 200 in 868.2665 ms
+2026-11-03 19:12:12 [INF] HTTP GET /api/Logo responded 200 in 734.7561 ms
+2026-11-03 19:12:12 [INF] HTTP GET /api/HeroBanner responded 200 in 873.6936 ms
+2026-11-03 19:12:12 [INF] HTTP GET /api/HomeDecore responded 200 in 877.1689 ms
+2026-11-03 19:15:39 [WRN] The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert
+2026-11-03 19:15:43 [INF] HTTP GET /swagger/index.html responded 200 in 429.1385 ms
+2026-11-03 19:15:43 [INF] HTTP GET /swagger/index.js responded 200 in 44.9920 ms
+2026-11-03 19:15:43 [INF] HTTP GET /swagger/index.css responded 200 in 82.5354 ms
+2026-11-03 19:15:43 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 262.6871 ms
+2026-11-03 19:15:43 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 272.4147 ms
+2026-11-03 19:15:43 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 291.0249 ms
+2026-11-03 19:15:44 [INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 2.0870 ms
+2026-11-03 19:15:44 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 98.7884 ms
+2026-11-03 19:16:04 [INF] Retrieving all users.
+2026-11-03 19:16:08 [WRN] No store type was specified for the decimal property 'OriginalPrice' on entity type 'TrendingProducts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-11-03 19:16:09 [WRN] No store type was specified for the decimal property 'Price' on entity type 'TrendingProducts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-11-03 19:16:09 [WRN] No store type was specified for the decimal property 'Rating' on entity type 'TrendingProducts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-11-03 19:16:09 [WRN] No store type was specified for the decimal property 'Reviews' on entity type 'TrendingProducts'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-11-03 19:16:20 [INF] Successfully retrieved users. Response: [{"Id":1,"Name":"Ramya","Email":"ramya@gmail.com","Password":"string","$type":"UserDto"},{"Id":2,"Name":"Ram","Email":"ram@gmail.com","Password":"string","$type":"UserDto"},{"Id":3,"Name":"R","Email":"r@gmail.com","Password":"string","$type":"UserDto"}]
+2026-11-03 19:16:48 [INF] HTTP GET /api/User responded 200 in 54541.9479 ms

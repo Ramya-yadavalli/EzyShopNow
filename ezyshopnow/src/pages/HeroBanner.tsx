@@ -248,18 +248,15 @@ function HeroBanner() {
       setLoading(true);
       setError("");
 
-      const response = await fetch(
-        isEdit ? `${API_URL}/${payload.id}` : API_URL,
-        {
-          method: isEdit ? "PUT" : "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+      const response = await fetch(API_URL, {
+        method: isEdit ? "PUT" : "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      });
 
       if (!response.ok) {
         throw new Error(

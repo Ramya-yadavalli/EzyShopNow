@@ -73,6 +73,14 @@
               "target": "Package",
               "version": "[10.0.13, )"
             },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[10.3.1, )"
@@ -570,6 +578,20 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[10.0.14, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

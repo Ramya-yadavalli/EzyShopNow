@@ -1,3 +1,4 @@
+using Api.Middleware;
 using Application.Interfaces;
 using Application.Services;
 using Infrastructure.Data;
@@ -5,9 +6,32 @@ using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using System.Text;
-
 var builder = WebApplication.CreateBuilder(args);
+
+// Add default logging providers (Console, Debug, EventSource)
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
+
+// Optional: Set minimum log level
+builder.Logging.SetMinimumLevel(LogLevel.Debug);
+
+
+// Read Serilog configuration from appsettings.json
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateBootstrapLogger();
+
+builder.Services.AddSerilog((services, configuration) =>
+        configuration
+            .ReadFrom.Configuration(builder.Configuration)
+            .ReadFrom.Services(services)
+            .Enrich.FromLogContext()
+    );
+
+
 
 // Add services to the container.
 
@@ -75,6 +99,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseSerilogRequestLogging();
+
+    app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
     app.MapOpenApi();
     app.UseSwagger();
     app.UseSwaggerUI();
